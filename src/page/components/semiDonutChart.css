@@ -1,0 +1,165 @@
+
+  .download{
+      position: absolute;
+      left: 40vh;
+      bottom: 5vh;
+      height: 150px;
+      width: 359px;
+      border-radius: 5px;
+      box-shadow: 5px 5px  5px 5px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      overflow: hidden;
+  } 
+
+  .download >h4{
+      padding: 15px 0 0 10px;
+      margin-bottom: 16px;
+  }
+
+  
+  /* RESET STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .chart-download {
+    margin: auto;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .chart-download *,
+  .chart-download::before {
+    box-sizing: border-box;
+  }
+  
+  
+  /* chart-download STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .chart-download {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .chart-download::before,
+  .chart-download::after {
+    position: absolute;
+  }
+  
+  .chart-download::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    border: 3px solid rgba(211, 211, 211, .3);
+    border-bottom: none;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+  }
+  
+ 
+  
+  .chart-download li {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 4px solid;
+    border-top: none;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+  }
+  
+  .chart-download li:nth-child(1) {
+    z-index: 4;
+    border-color:rgba(0, 100, 0, 1);
+    animation-name: rotate-one;
+  }
+  
+  .chart-download li:nth-child(2) {
+    z-index: 3;
+    border-color: rgba(221, 240, 221, 0.945);
+    animation-name: rotate-two;
+    animation-delay: .4s;
+  }
+  
+  .chart-download li:nth-child(3) {
+    z-index: 2;
+    border-color: rgba(144, 238, 144, 0.945);
+    animation-name: rotate-three;
+    animation-delay: .8s;
+  }
+  
+  
+  .chart-download span {
+    position: absolute;
+    backface-visibility: hidden;
+    animation: fade-in .4s linear forwards;
+  }
+  
+  .chart-download li:nth-child(1) span {
+    top: 5px;
+    left: 10px;
+    transform: rotate(-90deg);
+  }
+  
+  .chart-download li:nth-child(2) span {
+    top: 20px;
+    left: 10px;
+    transform: rotate(-110deg);
+    animation-delay: .4s;
+  }
+  
+  .chart-download li:nth-child(3) span {
+    top: 18px;
+    left: 10px;
+    transform: rotate(-180deg);
+    animation-delay: .8s;
+  }
+  
+  
+  
+  /* ANIMATIONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  @keyframes rotate-one {
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+  
+  @keyframes rotate-two {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(110deg);
+    }
+  }
+  
+  @keyframes rotate-three {
+    0% {
+      transform: rotate(110deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  
+  @keyframes fade-in {
+    0%,
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
